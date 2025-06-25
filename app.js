@@ -1,41 +1,4 @@
 
-// let todo = document.getElementById("todoValue");
-// let list = document.getElementById("list");
-
-// function addTodo() {
-//     if (todo.value.trim() === "") {
-//         alert("Please enter a task!");
-//         return;
-//     }
-//     list.innerHTML += `<li class="lists">
-//                 <input type="text class="main_input" value="${todo.value}" disabled>
-//                 <button onclick="deleteTodo(event)">Delete</button>
-//                 <button onclick="editTodo(event)">Edit</button>
-//             </li>`;
-
-//     todo.value = "";
-// }
-
-// function editTodo(event) {
-//     let target = event.target;
-//     let li = target.parentNode;
-//     let input = li.querySelector("input");
-//     let editButton = li.querySelector("button:nth-child(3)");
-
-//     if (editButton.innerText === "Edit") {
-//         input.disabled = false;
-//         editButton.innerText = "Update";
-//     } else {
-//         input.disabled = true;
-//         editButton.innerText = "Edit";
-//     }
-// }
-
-// function deleteTodo(event) {
-//     let li = event.target.parentNode;
-//     li.remove();
-
-
 
 let todo = document.getElementById("todoValue");
 let list = document.getElementById("list");
@@ -66,7 +29,8 @@ function addTodo() {
 }
 
 function addTodoToList(todoItem) {
-    list.innerHTML += `<li class="lists">
+    list.innerHTML += 
+    `<li class="lists">
                 <input type="checkbox" class="todo-checkbox" onchange="toggleCompletion(event)" ${todoItem.completed ? "checked" : ""}>
                 <input type="text" class="main_input" value="${todoItem.text}" disabled>
                 <button class="del" onclick="deleteTodo(event)">Delete</button>

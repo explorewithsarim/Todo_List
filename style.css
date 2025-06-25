@@ -1,118 +1,206 @@
-.main_input {
-    border: none;
-    outline: none;
-    color: black;
-    font-size: 1rem;
-    background-color: #fff;
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
 }
 
 .container {
-    background-image: url(https://plus.unsplash.com/premium_photo-1673306778968-5aab577a7365?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-
-    border: 1px solid #000;
-    width: 50vw;
-    margin: 0px auto;
-    height: 100vh;
-
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
 }
 
-ol {
-
-    position: relative;
-    left: 5vw;
-  
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
 }
-
 
 .main_content {
-
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
+@media  (max-width:576px) {
+    .inp{
+        width: 100%;
+        border: 1px solid #000;
 
-.lists {
-
-    padding: 10px;
+    }
+    .main_content{
+        flex-direction: column;
+    }
+ 
+    
 }
-
-.del,
-.edit {
-
-    height: 5vh;
-    width: 7vw;
-    border-radius: 10px;
-    font-size: 1rem;
-    color: white;
-    background-color: black;
-}
-
 .inp {
-    margin: 10px;
-    border-radius: 10px;
-    width: 20vw;
-    height: 40px;
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
 }
 
-.edit:hover {
-
-    background-color: black;
-    color: red;
-
-
-
+.add_btn, .delete_btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.del:hover {
-
-    color: red;
-
-
-}
-
-.delete_btn,
 .add_btn {
-    height: 5vh;
-    width: 7vw;
-    margin: 5px;
-    font-size: 1rem;
-    border-radius: 10px;
+    background-color: #28a745;
     color: white;
-    background-color: black;
-}
-
-H1 {
-
-
-    font-style: italic;
-    text-align: center;
-}
-
-.delete_btn:hover {
-
-
-    color: black;
-    background-color: #fff;
 }
 
 .add_btn:hover {
-
-
-    color: black;
-    background-color: #fff;
+    background-color: #218838;
 }
 
-.completed {
-    text-decoration: line-through;
-    opacity: 0.7;
+.delete_btn {
+    background-color: #dc3545;
+    color: white;
 }
 
-@media (max-width:912px) {
+.delete_btn:hover {
+    background-color: #c82333;
+}
 
-    ol{
-        position: relative;
-        left: 0;
+#list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    color: #333;
+}
+
+#list li {
+    padding: 10px 15px;
+    margin: 6px 0;
+    background-color: #f4f4f4;
+    border-left: 4px solid #667eea;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+#list li:hover {
+    background-color: #e2e2e2;
+}
+
+
+.main_input:focus:not(:disabled) {
+  border: 1px solid #764ba2;
+  background-color: #fff;
+  color: #222;
+  box-shadow: 0 0 5px #764ba2;
+}
+
+.lists {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #000;
+    gap: 12px;
+    padding: 12 px 15px;
+    margin: 8px 0;
+    background-color: #f9f9f9;
+    border-left: 4px solid #764ba2;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.lists:hover {
+  background-color: #f1f1f1;
+}
+
+
+.todo-checkbox {
+  transform: scale(1.3);
+  margin-right: 12px;
+  accent-color: #764ba2;
+  cursor: pointer;
+}
+
+.main_input {
+    flex: 1;
+    font-size: 16px;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: #333;
+    outline: none;
+}
+
+.main_input:disabled {
+    color: #555;
+}
+
+.del, .edit {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.del {
+    background-color: #ff5e5e;
+    color: white;
+}
+
+.del:hover {
+    background-color: #e64949;
+}
+
+.edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.edit:hover {
+    background-color: #0062cc;
+}
+
+
+@media (max-width: 576px) {
+
+    .lists {
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: center;
+        
+    }
+
+    .main_input {
+     
+        width: 100%;
+    
+        
+    }
+
+
+    .del, .edit {
+        width: 100%;
+        margin-top: 6px;
     }
 }
